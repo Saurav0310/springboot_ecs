@@ -11,7 +11,7 @@ module "ecs" {
   path = "/swagger-ui.html" #target_group_health_check_path
 #  port = 8090
 
-  imageURI         = var.imageURI
+  imageURI         = "991037556739.dkr.ecr.us-east-1.amazonaws.com/newimages:latest"
   container_cpu    = 512
   container_memory = 736
   containerPort    = 8090
