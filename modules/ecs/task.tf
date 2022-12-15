@@ -28,7 +28,7 @@ resource "aws_ecs_task_definition" "task" {
   container_definitions = jsonencode([
     {
       name      = "app-${var.name}"
-      image     = "${var.imageURI}"
+      image     = "991037556739.dkr.ecr.us-east-1.amazonaws.com/newimages:latest"
       cpu       = "${var.container_cpu}"
       memory    = "${var.container_memory}"
       essential = true
