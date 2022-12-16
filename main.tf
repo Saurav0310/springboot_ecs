@@ -24,7 +24,7 @@ module "ecs" {
   public_sg  = [module.sgALB.sgid]    #ALBsecuritygroup&public_subnet
   public_sub = [module.network.public_subnet_ids1, module.network.public_subnet_ids2]
   path = "/swagger-ui.html" #target_group_health_check_path
-  imageURI         = module.ecs.image
+  imageURI         = "${var.imageURI}"
   container_cpu    = 512
   container_memory = 736
   containerPort    = 8090
