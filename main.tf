@@ -1,6 +1,3 @@
-module "network" {
-  source = "./modules/network"
-}
 module "ecs" {
   source     = "./modules/ecs"
   asg_arn    = module.asg.asg_arn
@@ -21,7 +18,10 @@ module "ecs" {
                        "DB_USER" : module.rds.ssm_parameter_rds_user, 
                        "DB_PASS" : module.rds.ssm_parameter_rds_password }
 }
-
+module "network" {
+  source = "./modules/network"
+}
+                         
 module "sgASG" {
   source    = "./modules/sg"
   name      = "ecs"
@@ -29,6 +29,20 @@ module "sgASG" {
   sg_vpc_id = module.network.vpcid
   from_port = 8090      #49153  #8090for dynamic port 
   to_port   = 8091     #65535  #8091
+}
+    
+module "asg" {
+  source            = "./modules/asg"
+  name              = var.name
+  asg_max           = 1
+  asg_min           = 1
+  health_check_type = "ELB"
+  desired_capacity  = 1
+  force_delete      = "true"
+  instance_types    = "t3.small"
+  asg_sg            = [module.sgASG.sgid]
+  vpc_zone_id       = [module.network.private_subnet_ids1, module.network.private_subnet_ids2]
+
 }
 
 module "sgALB" {
@@ -48,20 +62,6 @@ module "sgRDS" {
   sg_vpc_id = module.network.vpcid
   from_port = 3306
   to_port   = 3306
-}
-
-module "asg" {
-  source            = "./modules/asg"
-  name              = var.name
-  asg_max           = 1
-  asg_min           = 1
-  health_check_type = "ELB"
-  desired_capacity  = 1
-  force_delete      = "true"
-  instance_types    = "t3.small"
-  asg_sg            = [module.sgASG.sgid]
-  vpc_zone_id       = [module.network.private_subnet_ids1, module.network.private_subnet_ids2]
-
 }
 
 module "rds" {
