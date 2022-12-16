@@ -1,6 +1,9 @@
 # Deploy Spring Boot App On ECS 
+![aws arch drawio](https://user-images.githubusercontent.com/91631978/208026371-96ffb672-953a-4c74-8bf0-bf94470340c4.png)
 
 This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
+
+
 
 ## For executing the Workflow this steps riquired 
 - set aws credential using git secrets .
@@ -16,7 +19,6 @@ This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
 
 ## s3 backend -- i am using s3 bucket as backend to save .tfstate file. you have to configure your s3 bucket or you can use local to save your .tfstate file
 
-## Resources![template1-designer](https://user-images.githubusercontent.com/91631978/208026098-c70a02c5-4d7c-49a5-9fc9-96347a78cd44.png)
 
 
 | Name | Type |
