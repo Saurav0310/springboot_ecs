@@ -1,3 +1,3 @@
 variable "name" {
-    default = "demo1"
+    default = "spring"
 }
