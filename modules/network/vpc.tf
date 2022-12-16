@@ -54,11 +54,8 @@ resource "aws_subnet" "private_us_east_1b" {
   availability_zone = "us-east-1b"
 }
 
-#data "aws_vpc" "main" {
-#  vpc_id = aws_vpc.main.id
-#}
 
-########natGateway
+#natGateway
 
 resource "aws_eip" "nat_eip" {
   vpc = true
