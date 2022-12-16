@@ -12,13 +12,12 @@ This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
 -- RDS , SSM Parameter 
 -- Application Load Balancer , Target Group
 -- ECS , Task Defination , Service 
-```
-
-# i have usefd s3  in backend to store tf.state file 
+``` 
 
 ## s3 backend -- i am using s3 bucket as backend to save .tfstate file. you have to configure your s3 bucket or you can use local to save your .tfstate file
 
-## Resources
+## Resources![template1-designer](https://user-images.githubusercontent.com/91631978/208026098-c70a02c5-4d7c-49a5-9fc9-96347a78cd44.png)
+
 
 | Name | Type |
 |------|------|
@@ -30,7 +29,8 @@ This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
 | [aws_iam_instance_profile](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile) | resource |
 | [aws_iam_role_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy) | resource 
 
-## How to Run 
+
+# How to run
 
 # Steps to Be Followed 
  
