@@ -2,7 +2,7 @@ variable "health_check_type" {
   default = "ELB"
 }
 variable "imageURI" {
-  default = "nginx"
+  default = "public.ecr.aws/i9h4s2e8/spring_boot:latest"
 }
 variable "desired_capacity" {
   default = "1"
