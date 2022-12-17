@@ -11,11 +11,11 @@ provider "aws" {
   region = "us-east-1"
 }
 
-terraform {
-  backend "s3" {
-    # Replace this with your bucket name!
-    bucket = "terraform-statefile-store23"
-    key    = "terraform.tfstate"
-    region = "us-east-1"
-  }
-}
+# terraform {
+#   backend "s3" {
+#     # Replace this with your bucket name!
+#     bucket = "terraform-statefile-store23"
+#     key    = "terraform.tfstate"
+#     region = "us-east-1"
+#   }
+# }
