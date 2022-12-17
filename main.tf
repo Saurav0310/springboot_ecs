@@ -81,3 +81,8 @@ module "rds" {
   db_subnet_group_name   = module.network.aws_db_subnet_group-default
   vpc_security_group_ids = [module.sgRDS.sgid]
 }
+
+module "s3" {
+  source = "./modules/s3"
+  key   = "terraform.tfstate"
+}
