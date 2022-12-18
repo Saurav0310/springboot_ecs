@@ -20,6 +20,8 @@ This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
 ## s3 backend -- i am using s3 bucket as backend to save .tfstate file. you have to configure your s3 bucket or you can use local to save your .tfstate file
 
 
+## I have used SSM parameter to store the database info i.e db_name , db_password etc .
+
 
 | Name | Type |
 |------|------|
@@ -27,22 +29,19 @@ This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
 | [aws_ssm_parameter](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_parameter) | resource |
 | [aws_instance](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance) | resource |
 | [aws_security_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
-| [aws_iam_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
-| [aws_iam_instance_profile](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile) | resource |
 | [aws_iam_role_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy) | resource 
 
 
 # How to run
-
-# Steps to Be Followed 
+# Steps : 
  
  * Clone this repository 
 
 1-Add AWS Secret to Github-Action Evironment
    -go To Setting Secret/Action/ -click on New Repository Secret and Add Your AWS_ACCESS_KEY_ID & AWS_SECRET_ACCESS_KEY
 
-2- Create Your Own s3 bucket and replace details in main.tf
+2- Create you s3 bucket and replace name of s3 in provider.tf
 
-3- Now you can manage your architecture using github action 
+3- Now to execute the code got to github-action and run-workflow accordingly.
 
 
