@@ -42,6 +42,6 @@ This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
 
 2- Create you s3 bucket and replace name of s3 in provider.tf
 
-3- Now to execute the code got to github-action and run-workflow accordingly.
+3- Now to execute the code go to github-action and run-workflow accordingly.
 
 
