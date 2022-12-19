@@ -15,7 +15,6 @@ resource "aws_launch_configuration" "as_conf" {
   image_id      = var.image_id
   instance_type = "${var.instance_types}"
   security_groups = var.asg_sg
-#  associate_public_ip_address = true
   user_data = <<EOF
 #!/bin/bash
 echo ECS_CLUSTER=${var.name} >> /etc/ecs/ecs.config;echo ECS_BACKEND_HOST= >> /etc/ecs/ecs.config;
