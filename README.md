@@ -26,7 +26,7 @@ This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
   - I have set input parameter so you can use to apply and destroy accordingly.
 ### To view Swagger 2 API docs
 
-Run the server and browse to localhost:8090/swagger-ui.html    #replace localhost:8090 inster loadbalancer url
+Run the server and browse to localhost:8090/swagger-ui.html    #replace localhost:8090 to loadbalancer url
 
 
 ## The following resources will be created:
@@ -49,12 +49,9 @@ This project uses an in-memory database so that you don't have to install a data
 Here is what you would do to back the services with MySQL, for example: 
 
 ### In pom.xml add: 
-
 ```
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 ```
-
- 
