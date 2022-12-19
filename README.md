@@ -9,8 +9,8 @@ This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
    -go To Setting Secret/Action/ -click on New Repository Secret and Add Your AWS_ACCESS_KEY_ID & AWS_SECRET_ACCESS_KEY
 
 - set aws credential using git secrets .
-   AWS_ACCESS_KEY_ID     = 
-   AWS_SECRET_ACCESS_KEY =
+   AWS_ACCESS_KEY_ID   &
+   AWS_SECRET_ACCESS_KEY 
    
    ![image](https://user-images.githubusercontent.com/91631978/208396209-c9e315f8-a2bc-457e-a479-601459d6019c.png)
 
