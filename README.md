@@ -16,7 +16,7 @@ This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
 
 
 
-2- Create you s3 bucket and replace name of s3 in provider.tf 
+2- Create you s3 bucket and replace bucket name of s3 in provider.tf 
   
 ![image](https://user-images.githubusercontent.com/91631978/208413841-b03b2529-2d9b-44fd-8dac-4f905763524f.png)
 
