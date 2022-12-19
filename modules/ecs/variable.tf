@@ -146,26 +146,7 @@ variable "desired_count" {
 variable "ssm_variables" {
   default = {}
 }
-####target group
-variable "path" {
-  default = "/"
-}
 
-variable "healthy_threshold" {
-  default = 6
-}
-variable "unhealthy_threshold" {
-  default = 2
-}
-variable "timeout" {
-  default = 2
-}
-variable "interval" {
-  default = 5
-}
-variable "matcher" {
-  default = 200
-}
 #service-app-autoscaling-group
 variable "autoscaling_cpu" {
   default     = false
@@ -196,13 +177,25 @@ variable "autoscaling_target_memory" {
   default     = 90
   description = "Target average Memory percentage to track for autoscaling"
 }
+####target group
+variable "path" {
+  default = "/"
+}
 
-# variable "autoscaling_scale_in_cooldown" {
-#   default     = 300
-#   description = "Cooldown in seconds to wait between scale in events"
-# }
+variable "healthy_threshold" {
+  default = 6
+}
+variable "unhealthy_threshold" {
+  default = 2
+}
+variable "timeout" {
+  default = 2
+}
+variable "interval" {
+  default = 5
+}
+variable "matcher" {
+  default = 200
+}
 
-# variable "autoscaling_scale_out_cooldown" {
-#   default     = 300
-#   description = "Cooldown in seconds to wait between scale out events"
-# }
+
