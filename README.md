@@ -1,6 +1,33 @@
 # Deploy Spring Boot App On ECS 
 
 This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
+# Steps to run this application 
+ 
+ * Clone this repository 
+
+1-Add AWS Secret to Github-Action Evironment
+   -go To Setting Secret/Action/ -click on New Repository Secret and Add Your AWS_ACCESS_KEY_ID & AWS_SECRET_ACCESS_KEY
+
+- set aws credential using git secrets .
+   AWS_ACCESS_KEY_ID     = 
+   AWS_SECRET_ACCESS_KEY =
+
+2- Create you s3 bucket and replace name of s3 in provider.tf 
+  
+  terraform {
+  backend "s3" {
+    bucket = # Replace this with your bucket name!
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
+}
+
+3- Now to execute the code go to github-action and run-workflow .
+  - I have set input parameter so you can use to apply and destroy accordingly.
+### To view Swagger 2 API docs
+
+Run the server and browse to localhost:8090/swagger-ui.html    #replace localhost:8090 inster loadbalancer url
+
 
 ## The following resources will be created:
 ```hcl
@@ -30,29 +57,4 @@ Here is what you would do to back the services with MySQL, for example:
         </dependency>
 ```
 
-## Steps to run this application 
  
- * Clone this repository 
-
-1-Add AWS Secret to Github-Action Evironment
-   -go To Setting Secret/Action/ -click on New Repository Secret and Add Your AWS_ACCESS_KEY_ID & AWS_SECRET_ACCESS_KEY
-
-- set aws credential using git secrets .
-   AWS_ACCESS_KEY_ID     = 
-   AWS_SECRET_ACCESS_KEY =
-
-2- Create you s3 bucket and replace name of s3 in provider.tf 
-  
-  terraform {
-  backend "s3" {
-    bucket = # Replace this with your bucket name!
-    key    = "terraform.tfstate"
-    region = "us-east-1"
-  }
-}
-
-3- Now to execute the code go to github-action and run-workflow .
-  - I have set input parameter so you can use to apply and destroy accordingly.
-### To view Swagger 2 API docs
-
-Run the server and browse to localhost:8090/swagger-ui.html    #replace localhost:8090 inster loadbalancer url 
