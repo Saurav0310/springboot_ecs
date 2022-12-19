@@ -28,7 +28,8 @@ This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
 
 3- Now to execute the code go to github-action and run-workflow .
   - I have set input parameter so you can use to apply and destroy accordingly.
-### To view Swagger 2 API docs
+
+### To view Swagger 
 Run the server and browse to localhost:8090/swagger-ui.html    #replace localhost:8090 to loadbalancer url
 
 
