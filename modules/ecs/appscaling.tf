@@ -18,8 +18,8 @@ resource "aws_appautoscaling_policy" "scale_cpu" {
   target_tracking_scaling_policy_configuration {
     target_value       = var.autoscaling_target_cpu
     disable_scale_in   = false
-    scale_in_cooldown  = var.autoscaling_scale_in_cooldown
-    scale_out_cooldown = var.autoscaling_scale_out_cooldown
+#     scale_in_cooldown  = var.autoscaling_scale_in_cooldown
+#     scale_out_cooldown = var.autoscaling_scale_out_cooldown
 
     predefined_metric_specification {
       predefined_metric_type = "ECSServiceAverageCPUUtilization"
@@ -38,7 +38,8 @@ resource "aws_appautoscaling_policy" "scale_memory" {
   target_tracking_scaling_policy_configuration {
     target_value       = var.autoscaling_target_memory
     disable_scale_in   = false
-
+#     scale_in_cooldown  = var.autoscaling_scale_in_cooldown
+#     scale_out_cooldown = var.autoscaling_scale_out_cooldown
     predefined_metric_specification {
       predefined_metric_type = "ECSServiceAverageMemoryUtilization"
     }
