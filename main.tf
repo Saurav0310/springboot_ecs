@@ -32,7 +32,7 @@ module "ecs" {
   container_cpu    = 1024
   container_memory = 1024
   containerPort    = 8090
-  hostPort         = 8090 #0
+  hostPort         = 0
   autoscaling_cpu  = true
   autoscaling_target_cpu = 70
 }
@@ -43,8 +43,8 @@ module "sgASG" {
   name      = "ecs"
   sg_cidr   = [module.network.cidr_block]
   sg_vpc_id = module.network.vpcid
-  from_port = 8090   
-  to_port   = 8091    
+  from_port = 49153 
+  to_port   = 65535  
 }
     
 
