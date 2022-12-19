@@ -63,17 +63,7 @@ variable "vpc_id" {
 variable "public_sg" {
   
 }
-#variable "private_subnet_ids" {
-#  type        = list(string)
-#  default = [module.network.private_subnet_ids1,module.network.private_subnet_ids2]
-#  description = "List of private subnet IDs for ECS instances and Internal ALB when enabled."
-#}
-#
-#variable "public_subnet_ids" {
-#  type        = list(string)
-#  default = [module.network.public_subnet_ids1,module.network.public_subnet_ids2]
-#  description = "List of public subnet IDs for ECS ALB."
-#}
+
 
 variable "security_group_ids" {
   type        = list(string)
@@ -160,9 +150,7 @@ variable "ssm_variables" {
 variable "path" {
   default = "/"
 }
-#variable "port" {
-#  default = 80
-#}
+
 variable "healthy_threshold" {
   default = 6
 }
@@ -209,12 +197,12 @@ variable "autoscaling_target_memory" {
   description = "Target average Memory percentage to track for autoscaling"
 }
 
-variable "autoscaling_scale_in_cooldown" {
-  default     = 300
-  description = "Cooldown in seconds to wait between scale in events"
-}
+# variable "autoscaling_scale_in_cooldown" {
+#   default     = 300
+#   description = "Cooldown in seconds to wait between scale in events"
+# }
 
-variable "autoscaling_scale_out_cooldown" {
-  default     = 300
-  description = "Cooldown in seconds to wait between scale out events"
-}
+# variable "autoscaling_scale_out_cooldown" {
+#   default     = 300
+#   description = "Cooldown in seconds to wait between scale out events"
+# }
