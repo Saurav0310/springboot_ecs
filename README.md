@@ -20,7 +20,7 @@ This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
   
   terraform {
   backend "s3" {
-    bucket = # Replace this with your bucket name!
+    bucket = "# Replace this with your bucket name!"
     key    = "terraform.tfstate"
     region = "us-east-1"
   }
@@ -29,7 +29,6 @@ This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
 3- Now to execute the code go to github-action and run-workflow .
   - I have set input parameter so you can use to apply and destroy accordingly.
 ### To view Swagger 2 API docs
-
 Run the server and browse to localhost:8090/swagger-ui.html    #replace localhost:8090 to loadbalancer url
 
 
