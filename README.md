@@ -41,7 +41,6 @@ Here is what you would do to back the services with MySQL, for example:
    AWS_ACCESS_KEY_ID     = 
    AWS_SECRET_ACCESS_KEY =
 
-
 2- Create you s3 bucket and replace name of s3 in provider.tf 
   
   terraform {
@@ -52,8 +51,8 @@ Here is what you would do to back the services with MySQL, for example:
   }
 }
 
-3- Now to execute the code go to github-action and run-workflow accordingly.
-
+3- Now to execute the code go to github-action and run-workflow .
+  - I have set input parameter so you can use to apply and destroy accordingly.
 ### To view Swagger 2 API docs
 
 Run the server and browse to localhost:8090/swagger-ui.html    #replace localhost:8090 inster loadbalancer url 
