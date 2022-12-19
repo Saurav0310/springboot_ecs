@@ -2,7 +2,6 @@
 
 This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
 
-## This terraform module builds an Elastic Container Service(ECS) Cluster in AWS.
 ## The following resources will be created:
 ```hcl
 -- VPC , NAT Gateway , Security Group for Auto scaling group , RDS , ALB
@@ -24,12 +23,12 @@ This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
 | [aws_security_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
 | [aws_iam_role_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy) | resource 
 
-# About Spring Boot
+## About Spring Boot
 
 Spring Boot is an "opinionated" application bootstrapping framework that makes it easy to create new RESTful services (among other types of applications). It provides many of the usual Spring facilities that can be configured easily usually without any XML. In addition to easy set up of Spring Controllers, Spring Data, etc. Spring Boot comes with the Actuator module that gives the application the following endpoints helpful in monitoring and operating the service
 
 
-# Running the project with MySQL
+## Running the project with MySQL
 
 This project uses an in-memory database so that you don't have to install a database in order to run it. However, converting it to run with another relational database such as MySQL or PostgreSQL is very easy. Since the project uses Spring Data and the Repository pattern, it's even fairly easy to back the same service with MongoDB. 
 
@@ -44,8 +43,7 @@ Here is what you would do to back the services with MySQL, for example:
         </dependency>
 ```
 
-# How to run
-# Steps : 
+## Steps to run this application 
  
  * Clone this repository 
 
