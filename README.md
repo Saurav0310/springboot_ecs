@@ -11,6 +11,10 @@ This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
 - set aws credential using git secrets .
    AWS_ACCESS_KEY_ID     = 
    AWS_SECRET_ACCESS_KEY =
+   
+   ![image](https://user-images.githubusercontent.com/91631978/208396209-c9e315f8-a2bc-457e-a479-601459d6019c.png)
+
+
 
 2- Create you s3 bucket and replace name of s3 in provider.tf 
   
