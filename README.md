@@ -18,13 +18,8 @@ This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
 
 2- Create you s3 bucket and replace name of s3 in provider.tf 
   
-  terraform {
-  backend "s3" {
-    bucket = "# Replace this with your bucket name!"
-    key    = "terraform.tfstate"
-    region = "us-east-1"
-  }
-}
+![image](https://user-images.githubusercontent.com/91631978/208413841-b03b2529-2d9b-44fd-8dac-4f905763524f.png)
+
 
 3- Now to execute the code go to github-action and run-workflow .
   - I have set input parameter so you can use to apply and destroy accordingly.
