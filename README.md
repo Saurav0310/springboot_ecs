@@ -25,6 +25,7 @@ This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
 | [aws_iam_role_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy) | resource 
 
 
+
 # How to run
 # Steps : 
  
@@ -36,10 +37,17 @@ This is a sample Java / Maven / Spring Boot (version 1.5.6) application .
 - set aws credential using git secrets .
    AWS_ACCESS_KEY_ID     = 
    AWS_SECRET_ACCESS_KEY =
-  ![image](https://user-images.githubusercontent.com/91631978/208351510-1ea670e0-3a99-4c5d-ab00-2e2405958b8a.png)
 
 
 2- Create you s3 bucket and replace name of s3 in provider.tf 
+  
+  terraform {
+  backend "s3" {
+    bucket = # Replace this with your bucket name!
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
+}
 
 3- Now to execute the code go to github-action and run-workflow accordingly.
 
