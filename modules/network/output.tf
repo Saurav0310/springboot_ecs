@@ -21,9 +21,7 @@ output "cidr_block" {
     value = "10.0.0.0/16"
 }
 
-#output "vpc_sg" {
-#    value = aws_security_group.allow_db.id
-#}
+
 output "aws_db_subnet_group-default" {
     value = aws_db_subnet_group.default.name
 }
