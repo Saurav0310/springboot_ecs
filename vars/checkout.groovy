@@ -1,7 +1,20 @@
 def call(Map stageParams) {
 
-    checkout([
-        branches: [[ name:"main"  stageParams.branch ]],
-        userRemoteConfigs: [[ url:"https://github.com/Saurav0310/springboot_ecs.git" stageParams.url ]]
-    ])
-  }
+    pipeline {
+    agent any
+    stages {
+        stage('Clean workspace') {
+            steps {
+                cleanWs()
+            }
+        }
+        stage('Git checkout') {
+           steps{
+                git branch: 'main', credentialsId: '', url: 'git@github.com:Saurav0310/springboot_ecs.git'
+                sh 'ls post/'
+                sh 'pwd'
+            }
+        }
+    }
+    }
+}
