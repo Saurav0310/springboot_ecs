@@ -2,10 +2,15 @@ def call(Map stageParams) {
 
     pipeline {
     agent any
-    stages {
-        stage('Clean workspace') {
-            steps {
-                cleanWs()
+    stages('Clean workspace'){
+        stage{
+                echo "Cleaning up ${WORKSPACE}"
+                // clean up our workspace
+                deleteDir()
+                // clean up tmp directory
+                dir("${workspace}@tmp") {
+                deleteDir()          
+                }
             }
         }
         stage('Git checkout') {
@@ -15,6 +20,5 @@ def call(Map stageParams) {
                 sh 'pwd'
             }
         }
-    }
     }
 }
