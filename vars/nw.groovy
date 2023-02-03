@@ -1,6 +1,8 @@
 //def call(Map pipelineArgs){
 pipeline {
     
+    agent any
+    
     environment {
         ACCOUNT_NO = "${pipelineArgs.ACCOUNT_NO}"
         GIT_URL = "${pipelineArgs.GIT_URL}"
