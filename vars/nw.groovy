@@ -80,11 +80,11 @@ pipeline {
     //         }
     //     } 
     }
-        post {
+        /*post {
         always 
         {   
             googlechatnotification message: 'Build_check of job ${JOB_NAME} - ${BUILD_NUMBER} with ${BUILD_URL} is ${BUILD_STATUS}', notifyAborted: true, notifyBackToNormal: true, notifyFailure: true, notifyNotBuilt: true, notifySuccess: true, notifyUnstable: true, suppressInfoLoggers: true, url: 'https://chat.googleapis.com/v1/spaces/AAAAMtiDwVM/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=KCqrVb7JZqQwG3l3MuJbaVxUoo6HW5_SxlFFfVtyzjs%3D'
         }
-            }
+            }*/
     }
 }
