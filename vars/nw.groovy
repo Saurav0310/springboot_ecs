@@ -1,5 +1,6 @@
 def call(def pipelineArgs){
 pipeline {
+    
     environment {
         ACCOUNT_NO = "${pipelineArgs.ACCOUNT_NO}"
         GIT_URL = "${pipelineArgs.GIT_URL}"
@@ -13,7 +14,8 @@ pipeline {
         // ROLE_ARN="${pipelineArgs.ROLE_ARN}"
         // ROLE_SESSION_ARN='jenkins-beta'
     }
-    stages11 {
+    
+    stages {
         
         stage('Clean workspace') {
             steps {
