@@ -14,19 +14,19 @@ pipeline {
             }
         stage('Build Image') {
            steps{
-                   sh """
+                   sh '''
                    #!/bin/bash
                    set +x
                    cd ${JOB_DIR}
                    ls
                    docker build -t ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-${env.BUILD_NUMBER} Dockerfile .
                    docker tag ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-${env.BUILD_NUMBER} ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-latest
-                   """
+                   '''
                 }
             }
         stage('Login to ECR  image and Push image') {
             steps {
-                sh """
+                sh '''
                    aws ecr get-login-password --region ${REGION} | docker login --usernadocker build -t ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-${env.BUILD_NUMBER} Dockerfile .
                    docker tag ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-${env.BUILD_NUMBER} ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-latestme AWS --password-stdin ${DOCKER_REGISTRY}
                    docker push ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-${env.BUILD_NUMBER}
@@ -34,12 +34,12 @@ pipeline {
                    docker rmi -f ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-${env.BUILD_NUMBER}
                    docker rmi -f ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-latest
                    rm -r /var/lib/jenkins/.docker/config.json
-                   """
+                   '''
                }
             }
         stage('assume role') {
           steps{
-                sh """
+                sh '''
                         temp_role=$(aws sts assume-role \
                             --role-arn $ROLE_ARN \
                             --role-session-name $ROLE_SESSION_ARN)
@@ -53,18 +53,18 @@ pipeline {
                         kubectl set image deployment/nw-social-${DOCKER_SERVICE}-${ENV} nw-social-${DOCKER_SERVICE}-${ENV}=${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-${BUILD_NUMBER}
                         kubectl rollout status deployment.v1.apps/nw-social-${DOCKER_SERVICE}-${ENV}
                         rm -r /var/lib/jenkins/.kube/config
-                    """
+                    '''
                 }
             }
                                 
 
         stage('kubernetes deploy') {
            steps{
-                sh """
+                sh '''
                 kubectl config set-context --namespace=default --current
                 kubectl set image deployment/nw-social-${DOCKER_SERVICE}-${ENV} nw-social-${DOCKER_SERVICE}-${ENV}=${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-${env.BUILD_NUMBER}'
                 kubectl rollout status deployment.v1.apps/nw-social-${DOCKER_SERVICE}-${ENV}
-                """
+                '''
             }
         } 
     }
