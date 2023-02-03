@@ -1,22 +1,5 @@
 def call(){
 pipeline {
-    
-    agent any
-    
-    environment {
-        ACCOUNT_NO = "${pipelineArgs.ACCOUNT_NO}"
-        GIT_URL = "${pipelineArgs.GIT_URL}"
-        REGION = "${pipelineArgs.REGION}"
-        JOB_DIR = "${pipelineArgs.JOB_DIR}/"
-        BRANCH = "${pipelineArgs.BRANCH}"
-        GIT_CRENDENTIAL_ID = "${pipelineArgs.GIT_CRENDENTIAL_ID}"
-        ENV = "${pipelineArgs.ENV}"
-        DOCKER_SERVICE = "${pipelineArgs.DOCKER_SERVICE}"
-        DOCKER_REGISTRY = "${ACCOUNT_NO}.dkr.ecr.${REGION}.amazonaws.com"
-        // ROLE_ARN="${pipelineArgs.ROLE_ARN}"
-        // ROLE_SESSION_ARN='jenkins-beta'
-    }
-    
     stages {
         
         stage('Clean workspace') {
