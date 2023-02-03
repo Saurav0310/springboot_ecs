@@ -13,7 +13,8 @@ pipeline {
         // ROLE_ARN="${pipelineArgs.ROLE_ARN}"
         // ROLE_SESSION_ARN='jenkins-beta'
     }
-    stages {
+    stages11 {
+        
         stage('Clean workspace') {
             steps {
                 cleanWs()
