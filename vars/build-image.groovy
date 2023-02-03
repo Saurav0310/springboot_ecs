@@ -1,10 +1,10 @@
-def call(){
- echo "Building java project"
+def call(Map config = [:]) {
+  echo "Building docker image"
   sh '''
   set +x
-  cd \$JOB_DIR
+  cd ${config.JOB_DIR}
   ls
-  docker build -t ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-${env.BUILD_NUMBER} Dockerfile .
-  docker tag ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-${env.BUILD_NUMBER} ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-latest  
+  docker build -t ${config.DOCKER_REGISTRY}/nw-social-${config.DOCKER_SERVICE}:${config.ENV}-${env.BUILD_NUMBER} Dockerfile .
+  docker tag ${config.DOCKER_REGISTRY}/nw-social-${config.DOCKER_SERVICE}:${config.ENV}-${env.BUILD_NUMBER} ${config.DOCKER_REGISTRY}/nw-social-${config.DOCKER_SERVICE}:${config.ENV}-latest  
   '''
 }
