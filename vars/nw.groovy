@@ -1,4 +1,4 @@
-def call(def pipelineArgs){
+def call(Map pipelineArgs){
 pipeline {
     
     environment {
