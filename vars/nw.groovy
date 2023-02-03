@@ -1,4 +1,4 @@
-//def call(Map pipelineArgs){
+def call(Map pipelineArgs){
 pipeline {
     
     agent any
@@ -92,4 +92,4 @@ pipeline {
         }
             }*/
     }
-//}
+}
