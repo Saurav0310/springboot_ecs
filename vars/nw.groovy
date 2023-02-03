@@ -37,19 +37,19 @@ pipeline {
                    """
                 }
             }
-        stage('Login to ECR  image and Push image') {
-            steps {
-                sh """
-                   aws ecr get-login-password --region ${REGION} | docker login --usernadocker build -t ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-${env.BUILD_NUMBER} Dockerfile .
-                   docker tag ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-${env.BUILD_NUMBER} ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-latestme AWS --password-stdin ${DOCKER_REGISTRY}
-                   docker push ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-${env.BUILD_NUMBER}
-                   docker push ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-latest
-                   docker rmi -f ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-${env.BUILD_NUMBER}
-                   docker rmi -f ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-latest
-                   rm -r /var/lib/jenkins/.docker/config.json
-                   """
-               }
-            }
+//         stage('Login to ECR  image and Push image') {
+//             steps {
+//                 sh """
+//                    aws ecr get-login-password --region ${REGION} | docker login --usernadocker build -t ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-${env.BUILD_NUMBER} Dockerfile .
+//                    docker tag ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-${env.BUILD_NUMBER} ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-latestme AWS --password-stdin ${DOCKER_REGISTRY}
+//                    docker push ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-${env.BUILD_NUMBER}
+//                    docker push ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-latest
+//                    docker rmi -f ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-${env.BUILD_NUMBER}
+//                    docker rmi -f ${DOCKER_REGISTRY}/nw-social-${DOCKER_SERVICE}:${ENV}-latest
+//                    rm -r /var/lib/jenkins/.docker/config.json
+//                    """
+//                }
+//             }
     //     stage('assume role') {
     //       steps{
     //             sh """
