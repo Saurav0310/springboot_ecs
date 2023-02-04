@@ -9,6 +9,5 @@
 // }
 def call() {
   echo "Building docker image"
-  sh "ls"
   sh "docker build -t \${APP_NAME}:\${BUILD_NUMBER} ."
 }
