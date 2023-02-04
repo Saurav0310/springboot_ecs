@@ -1,10 +1,9 @@
 def call(Map config = [:]) {
   echo "Building docker image"
   sh '''
-  set +x
-  cd ${config.JOB_DIR}
+  cd post
   ls
-  docker build -t ${config.DOCKER_REGISTRY}/nw-social-${config.DOCKER_SERVICE}:${config.ENV}-${env.BUILD_NUMBER} Dockerfile .
-  docker tag ${config.DOCKER_REGISTRY}/nw-social-${config.DOCKER_SERVICE}:${config.ENV}-${env.BUILD_NUMBER} ${config.DOCKER_REGISTRY}/nw-social-${config.DOCKER_SERVICE}:${config.ENV}-latest  
+  docker build -t new-${env.BUILD_NUMBER} Dockerfile .
+  docker tag new-${env.BUILD_NUMBER}:latest  
   '''
 }
