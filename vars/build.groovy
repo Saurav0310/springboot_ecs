@@ -5,7 +5,7 @@ def call() {
                    set +x
                    pwd
                    ls
-                   cd post
+                   cd post/
                    ls
                    docker build -t ${APP_NAME}:${BUILD_NUMBER} .
                    '''
