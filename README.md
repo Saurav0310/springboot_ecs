@@ -25,6 +25,8 @@ See [this article](https://jenkins.io/doc/book/pipeline/shared-libraries/#global
 about adding shared libraries via the Jenkins UI.
 
 ![](https://jenkins.io/doc/book/resources/pipeline/add-global-pipeline-libraries.png)
+![](https://jenkins.io/doc/book/resources/pipeline/add-global-pipeline-libraries.png)
+
 
 ### Within Pipeline Script
 
