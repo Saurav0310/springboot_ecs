@@ -45,8 +45,8 @@ script dynamically by adding it to the `@Library` block within a Pipeline script
 
 ## Usage
 
-Currently this repo has a `sendEmail` var that can be invoked after
-importing it. Once the entire shared library has been imported, `sendEmail`
+Currently this repo has a `deployment.groovy` `new_onboard.groovy` var that can be invoked after
+importing it. Once the entire shared library has been imported, `deployment.groovy`
 is available at the top level. E.g.
 
 ```
@@ -108,4 +108,3 @@ General instructions on contributing can be found in
 
 1. [Jenkins Pipeline](https://jenkins.io/doc/book/pipeline/shared-libraries/)
 2. [Jenkins Automation](https://github.com/cfpb/jenkins-automation)
-3. The wonderful [Fabric8](https://github.com/fabric8io/jenkins-pipeline-library) repo
