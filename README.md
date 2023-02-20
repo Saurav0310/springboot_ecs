@@ -3,7 +3,7 @@
 This is a collection of shared libraries to be used with
 [Jenkins Pipelines](https://jenkins.io/doc/book/pipeline/)
 
-  - **Technology stack**: Written in groovy/Jenkins Pipeline DSL. Requires Jenkins
+  - **Technology Googlechat Notification**: Written in groovy/Jenkins Pipeline DSL. Requires Jenkins
   - **Status**: This repo is intended to be an ongoing effort to collect useful Pipeline libraries.
 
 ## Dependencies
