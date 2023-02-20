@@ -20,6 +20,37 @@ These shared libraries may be accessed one of three ways:
 1. Include a `libraries` block in declarative pipeline syntax.
 1. Include this library in an `@Library` statement in a Pipeline script.
 
+## Library Directory Structure
+
+Shared Libraries have a specific directory structure that tells Jenkins how to load your code and make it available to pipelines.
+
+Here’s the layout, as defined by the Jenkins documentation:
+
+(root)
+
++- src                     # Groovy source files
+
+|   +- org
+
+|       +- foo
+
+|           +- Bar.groovy  # for org.foo.Bar class
+
++- vars
+
+|   +- fooBar.groovy          # for global 'foo' variable
+
+|   +- foo.txt             # help for 'foo' variable
+
++- resources               # resource files (external libraries only)
+
+|   +- org
+
+|       +- foo
+
+|           +- bar.json    # static helper data for org.foo.Bar
+
+
 ### Global Pipeline Libraries
 
 See [this article](https://jenkins.io/doc/book/pipeline/shared-libraries/#global-shared-libraries)
