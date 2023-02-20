@@ -1,5 +1,4 @@
 # Jenkins Pipeline Shared Libraries
-https://www.google.com/url?sa=i&url=https%3A%2F%2Fitnext.io%2Fjenkins-shared-library-f3408ddb3603&psig=AOvVaw1BPV0hHrxMi0_fjqe_-KhB&ust=1676965543482000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNjTq9DNo_0CFQAAAAAdAAAAABAD
 This is a collection of shared libraries to be used with
 [Jenkins Pipelines](https://jenkins.io/doc/book/pipeline/)
 
