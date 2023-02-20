@@ -1,4 +1,5 @@
- <div style="text-align:center"><img src="https://user-images.githubusercontent.com/91631978/220062724-07d78aff-176c-46ef-a88a-34e27d5beb8a.png"  width="600" height="300" /></div> 
+<img src="https://user-images.githubusercontent.com/91631978/220062724-07d78aff-176c-46ef-a88a-34e27d5beb8a.png"  width="600" height="300"
+ 
 # Jenkins Pipeline Shared Libraries
 This is a collection of shared libraries to be used with
 [Jenkins Pipelines](https://jenkins.io/doc/book/pipeline/)
