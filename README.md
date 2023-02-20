@@ -22,7 +22,7 @@ These shared libraries may be accessed one of three ways:
 
 ## Library Directory Structure
 
-Shared Libraries have a specific directory structure that tells Jenkins how to load your code and make it available to pipelines.
+'''Shared Libraries have a specific directory structure that tells Jenkins how to load your code and make it available to pipelines.
 
 Here’s the layout, as defined by the Jenkins documentation:
 
@@ -49,7 +49,7 @@ Here’s the layout, as defined by the Jenkins documentation:
 |       +- foo
 
 |           +- bar.json    # static helper data for org.foo.Bar
-
+'''
 
 ### Global Pipeline Libraries
 
